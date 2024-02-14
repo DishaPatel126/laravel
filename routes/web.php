@@ -18,7 +18,7 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
-    
+
     //fetech all values (raw sql query, query builder, eloquent(user model))
     // $users = DB::select("select * from users");
     // $users = DB::table('users')->get();
@@ -36,22 +36,22 @@ Route::get('/', function () {
     //     'password' => 'raaghav1907'
     // ]);
     // $users = User::create([
-    //     'name' => 'dim',
-    //     'email' => 'dim@gmail.com',
-    //     'password' => 'dim261'
+    //     'name' => 'Manushi',
+    //     'email' => 'manushi@gmail.com',
+    //     'password' => 'manushi2512'
     // ]);
 
     //update a user (raw sql query, query builder, eloquent(user model))
     // $users = DB::update("update users set password = ? where id = ?", ['dimsha2611', '2']);
     // $users = DB::table('users')->where('id', 3)->update(['password' => 'raaghav197']);
-    // $users = User::where('id', 4)->update(['password' => "raaghav197"]);
+    // $users = User::where('id', 8)->update(['name' => "Disha"]);
 
     //delete a user (raw sql query, query builder, eloquent(user model))
     // $users = DB::delete("delete from users where id = 2");
     // $users = DB::table('users')->where('id', 3)->delete();
     // $users = User::where('id', 5)->delete();
 
-    // dd($users->name);
+    // dd($users);
 });
 
 Route::get('/dashboard', function () {
@@ -64,4 +64,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
